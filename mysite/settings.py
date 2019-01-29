@@ -120,17 +120,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-#「デプロイ」章のmysite/settings.pyのチュートリアル通り新規追加
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-STATIC_ROOT ='os.path.join(BASE_DIR, 'static')'
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
