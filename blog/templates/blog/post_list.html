@@ -6,6 +6,7 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
+        {% csrf_token %}
         {% for post in posts %}
             <div>
                 <h1><a href="">{{ post.title }}</a></h1>
